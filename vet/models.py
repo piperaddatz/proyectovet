@@ -12,20 +12,8 @@ class Usuario(models.Model):
     profile_pic = models.ImageField()
     created_at = models.DateTimeField()
 
-    def __str__(self): 
+    def __str__(self):
         return self.username
-
-
- class Mascota(models.Model):   
-    nombre = models.CharField(max_length=255)
-    especie = models.CharField(max_length=255)
-    raza = models.CharField(max_length=255)
-    profile_pic = models.ImageField(upload_to='cars')
-    user_id = models.OneToManyField(Usuario)
-    created_at = models.DateTimeField()
-
-    def __str__(self): 
-        return self.nombre
 
 
 class Clinica(models.Model): 
@@ -40,7 +28,19 @@ class Clinica(models.Model):
         return self.nombre 
 
 
-class Trabaja(models.Model): 
+class Mascota(models.Model):
+    nombre = models.CharField(max_length=255)
+    especie = models.CharField(max_length=255)
+    raza = models.CharField(max_length=255)
+    profile_pic = models.ImageField()
+    user_id = models.ForeignKey('vet.Usuario',on_delete=models.CASCADE)
+    created_at = models.DateTimeField()
+
+    def __str__(self):
+        return self.nombre
+
+
+class Trabaja(models.Model):
     fecha = models.DateField() 
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE) 
     clinica = models.ForeignKey(Clinica, on_delete=models.CASCADE) 
@@ -51,7 +51,6 @@ class Trabaja(models.Model):
 
 
 class Diagnostico(models.Model): 
-
     titulo = models.CharField(max_length=50) 
     descripcion = models.TextField()
     mascota = models.ForeignKey(Mascota, on_delete=models.CASCADE) 
