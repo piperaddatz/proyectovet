@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -8,12 +9,15 @@ class Usuario(models.Model):
     username = models.CharField(max_length=264, unique=True)
     email = models.EmailField(max_length=255)
     password = models.CharField(max_length=12)
-    rol = models.CharField(max_length=12)
-    profile_pic = models.ImageField()
-    created_at = models.DateTimeField()
+    rol = models.CharField(max_length=12,default="cliente")
+    profile_pic = models.ImageField(default="")
+    created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.username
+
+    def get_absolute_url(self):
+        return reverse("vet:profile", kwargs={ 'pk':self.pk})
 
 
 class Clinica(models.Model): 

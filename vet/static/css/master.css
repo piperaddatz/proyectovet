@@ -1,9 +1,8 @@
-backg {
-  background-color: #4e4e4ed7;
-  }
 
 body {
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
   }
   
   h1,
@@ -16,9 +15,6 @@ body {
     font-weight: 700;
   }
   
-  hola {
-    background-color: aqua;
-  }
 
 
   header.masthead {
@@ -128,9 +124,18 @@ body {
   footer.footer {
     padding-top: 4rem;
     padding-bottom: 4rem;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+  
     
   }
 
   .backg {
     background-color: #E5E4E2; 
+    }
+
+ 
+    .framework {
+      min-height: 80%;
     }

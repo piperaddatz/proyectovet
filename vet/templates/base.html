@@ -16,9 +16,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+   
     <link rel="stylesheet" href="{% static '/css/master.css' %}">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/js/js.css' %}">
 
     <script src="https://kit.fontawesome.com/5a5ef1cb8c.js" crossorigin="anonymous"></script>
 
@@ -29,10 +32,10 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Left</a>
+            <li class="nav-item active borde-left">
+                <a class="nav-link" style="padding-left: 30px;" href="#">Left</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" >
                 <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item">
@@ -49,8 +52,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Right</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+            <li class="nav-item borde-right">
+                <a class="nav-link" style="padding-right: 30px;" href="{% url 'vet:signup' %}">Sign In</a>
             </li>
         </ul>
     </div>
@@ -70,20 +73,18 @@
           <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
             <ul class="list-inline mb-2">
               <li class="list-inline-item">
-                <a href="#">About</a>
+                <a href="#">Sobre Nosotros</a>
               </li>
               <li class="list-inline-item">&sdot;</li>
               <li class="list-inline-item">
-                <a href="#">Contact</a>
+                <a href="#">Contacto</a>
               </li>
               <li class="list-inline-item">&sdot;</li>
               <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
+                <a href="#">Politica</a>
               </li>
               <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
+
             </ul>
             <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2020. All Rights Reserved.</p>
           </div>
